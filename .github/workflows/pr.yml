@@ -20,3 +20,6 @@ jobs:
 
       - name: "Run linter"
         uses: stefanoeb/eslint-action@1.0.2
+
+      - name: "Run tests"
+        run: npm run test:unit

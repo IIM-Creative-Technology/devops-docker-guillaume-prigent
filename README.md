@@ -43,13 +43,13 @@ Initialisation d'un linter (eslint)
    uses: stefanoeb/eslint-action@1.0.2
 ```
 
-### Uniquement dans deploy.yml et deploy_preprod.yml
-
 Lancement des tests unitaires
 ```
  - name: "Run tests"
    run: npm run test:unit
 ```
+
+### Uniquement dans deploy.yml et deploy_preprod.yml
 
 Lancer l'application en mode production (build)
 ```
