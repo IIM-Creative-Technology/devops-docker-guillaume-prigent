@@ -28,7 +28,7 @@ export default {
     };
   },
   mounted() {
-    axios.get("http://www.omdbapi.com/?s=batman&apikey=f216d919").then(response => (this.films = response.data.Search));
+    axios.get("https://www.omdbapi.com/?s=batman&apikey=f216d919").then(response => (this.films = response.data.Search));
   }
 };
 </script>

@@ -37,7 +37,7 @@ export default {
     };
   },
   mounted() {
-    axios.get("http://www.omdbapi.com/?i=" + this.$route.params.id + "&apikey=f216d919").then(response => (this.filmData = response.data));
+    axios.get("https://www.omdbapi.com/?i=" + this.$route.params.id + "&apikey=f216d919").then(response => (this.filmData = response.data));
   }
 };
 </script>
