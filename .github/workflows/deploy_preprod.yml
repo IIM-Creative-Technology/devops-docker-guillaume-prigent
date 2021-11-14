@@ -1,0 +1,37 @@
+name: deploy_preprod
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy_preprod:
+    name: deploy_preprod
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Init repository"
+        uses: actions/checkout@v2
+
+      - name: "Setup Node"
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: "Install dependencies"
+        run: npm install
+
+      - name: "Build app"
+        run: npm run build
+
+      - name : "Install ruby"
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+
+      - name : "Install DPL"
+        run: gem install dpl
+
+      - name: "Deploy to Heroku"
+        run: dpl --provider=heroku --app=${{secrets.HEROKU_APP_PREPROD}} --api-key=${{secrets.HEROKU_API_KEY}} --skip_cleanup=true
