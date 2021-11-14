@@ -6,8 +6,8 @@ on:
       - master
 
 jobs:
-  ci-cd:
-    name: CI/CD
+  deploy_prod:
+    name: deploy_prod
     runs-on: ubuntu-latest
 
     steps:
