@@ -1,4 +1,4 @@
-# Vue Films
+# Vue Films - Develop
 
 Projet développé il y a deux ans dans le cadre d'une initiation à Vue.js
 
